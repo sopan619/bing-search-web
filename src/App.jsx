@@ -10,21 +10,29 @@ function App() {
          bing.close();
        },3500);
   }
-
+ 
   const stopSearch = ()=>{
     openTab();
-   setInterval(openTab,5000)
+    let s = setInterval(()=>{
+      // console.log("first")
+       openTab()
+  },5000
+  )
+  setTimeout(()=>{
+    // console.log("second")
+    clearInterval(s);
+  },20000)
   }
 
   return (
-    <div className="wrapper mb-20 flex flex-col">
+    <div className="wrapper flex flex-col">
       <div className="text-center my-5">
         <h1 className="text-3xl font-bold text-orange-900">
           We will make our app here.
           </h1>
       </div>
-      <div className="mx-auto">
-        <button className="bg-yellow-500 w-fit py-2 px-3 rounded-lg" onClick={stopSearch}>Click Me</button>
+      <div className="mx-auto w-fit">
+        <button className="bg-yellow-500 py-3 px-8 rounded-lg" onClick={stopSearch}>Click Me</button>
       </div>
     </div>
   );
