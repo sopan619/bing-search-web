@@ -43,7 +43,11 @@ const ourBody = () => {
       </div>
       <div className="mx-auto items-center flex flex-col gap-5">
         <label htmlFor="myInp" className="text-[#CBE4DE] text-xl md:text-2xl lg:text-3xl font-fasthand">How many Searches you want to perform?</label>
-        <input type="number" id="myInp" className="w-72 py-2 rounded-lg bg-[#64CCC5]/50 outline-2 outline outline-offset-2 text-center text-slate-800 text-lg font-josefin font-bold"/>
+        <input type="number" id="myInp" className="w-72 py-2 rounded-lg bg-[#64CCC5]/50 outline-2 outline outline-offset-2 text-center text-slate-800 text-lg font-josefin font-bold" onKeyUp={(e)=>{
+          if(e.key ==="Enter"){
+            stopSearch()
+          }
+        }}/>
         
         <p id='note' className='text-[#FFD95A]/60 font-josefin text-sm w-3/4 text-center'>Note: In Mobile, all you need is 20 searches to earn maximum points.</p>
         <div>
